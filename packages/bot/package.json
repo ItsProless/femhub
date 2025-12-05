@@ -1,6 +1,7 @@
 {
 	"name": "@workspace/bot",
 	"version": "1.0.0",
+	"type": "module",
 	"description": "",
 	"keywords": [],
 	"author": "",
@@ -25,18 +26,18 @@
 		"test:ui": "vitest --ui",
 		"test:coverage": "vitest --coverage",
 		"typecheck": "tsc --noEmit",
-		"lint": "prettier --check . && eslint --ext .ts --format=pretty src",
+		"lint": "eslint . --max-warnings 0",
 		"clean": "rimraf dist",
-		"format": "prettier --write . && eslint --ext .ts --fix --format=pretty src"
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@octokit/types": "^16.0.0",
 		"@types/node": "^24.10.1",
+		"@vitest/coverage-v8": "4.0.15",
+		"@workspace/eslint-config": "workspace:*",
+		"@workspace/typescript-config": "workspace:*",
 		"bumpp": "^10.3.2",
 		"eslint": "^9.39.1",
-		"eslint-config-neon": "^0.2.9",
-		"eslint-formatter-compact": "^8.40.0",
-		"eslint-formatter-pretty": "^7.0.0",
 		"prettier": "^3.7.4",
 		"rimraf": "^6.1.2",
 		"tsdown": "^0.16.8",
@@ -50,6 +51,6 @@
 		"better-call": "^1.1.4",
 		"discord.js": "^14.25.1",
 		"dotenv": "^17.2.3",
-		"zod": "^4.1.13"
+		"zod": "^3.25.76"
 	}
 }

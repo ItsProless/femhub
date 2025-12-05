@@ -15,8 +15,7 @@ describe('Loaders', () => {
 	afterEach(async () => {
 		try {
 			await rm(testDir, { recursive: true, force: true });
-		} catch (error) {
-		}
+		} catch (error) {}
 	});
 
 	it('should throw error if directory does not exist', async () => {

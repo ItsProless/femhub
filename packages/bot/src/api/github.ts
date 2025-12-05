@@ -26,7 +26,7 @@ export const GithubAPI = {
 	},
 
 	repoRelease: async (owner: string, repo: string) => {
-		let endpoint = `https://api.github.com/repos/${owner}/${repo}/releases`;
+		const endpoint = `https://api.github.com/repos/${owner}/${repo}/releases`;
 		const { data, error } = await betterFetch<ReleaseResponse>(endpoint);
 		if (error) {
 			return { error };

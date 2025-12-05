@@ -1,0 +1,100 @@
+version: 2
+
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    groups:
+      turbo:
+        patterns:
+          - 'turbo*'
+      dev-dependencies:
+        dependency-type: 'development'
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: 'npm'
+    directory: '/apps/web'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    groups:
+      next:
+        patterns:
+          - 'next*'
+          - '@next/*'
+      react:
+        patterns:
+          - 'react*'
+          - '@types/react*'
+      dev-dependencies:
+        dependency-type: 'development'
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: 'npm'
+    directory: '/packages/bot'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    groups:
+      discord:
+        patterns:
+          - 'discord.js'
+          - '@discordjs/*'
+      testing:
+        patterns:
+          - 'vitest*'
+          - '@vitest/*'
+      dev-dependencies:
+        dependency-type: 'development'
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: 'npm'
+    directory: '/packages/ui'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    groups:
+      react:
+        patterns:
+          - 'react*'
+          - '@types/react*'
+      radix:
+        patterns:
+          - '@radix-ui/*'
+      dev-dependencies:
+        dependency-type: 'development'
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: 'npm'
+    directory: '/packages/eslint-config'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    groups:
+      eslint:
+        patterns:
+          - 'eslint*'
+          - '@eslint/*'
+      dev-dependencies:
+        dependency-type: 'development'
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: 'npm'
+    directory: '/packages/typescript-config'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    groups:
+      typescript:
+        patterns:
+          - 'typescript*'
+          - '@types/*'
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 5
